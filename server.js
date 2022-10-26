@@ -19,12 +19,12 @@ app.use((req, res, next) => {
 app.use('/api/workouts', workoutRoutes)
 
 // connect to db
-mongoose.connect("mongodb+srv://user123:user123@firstclustor.p5flr.mongodb.net/Banner?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('connected to database')
     // listen to port
-    app.listen(4000, () => {
-      console.log('listening for requests on port', 4000)
+    app.listen(process.env.PORT, () => {
+      console.log('listening for requests on port', process.env.PORT)
     })
   })
   .catch((err) => {
