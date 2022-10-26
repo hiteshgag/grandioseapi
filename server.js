@@ -18,6 +18,9 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/workouts', workoutRoutes)
 
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
+
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
