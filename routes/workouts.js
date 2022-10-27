@@ -7,7 +7,7 @@ const {
   updateWorkout
 } = require('../controllers/workoutController')
 
-//const cache = require('../routeCache')
+const cache = require('../routeCache')
 
 const router = express.Router()
 
