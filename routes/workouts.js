@@ -7,12 +7,12 @@ const {
   updateWorkout
 } = require('../controllers/workoutController')
 
-const cache = require('../routeCache')
+//const cache = require('../routeCache')
 
 const router = express.Router()
 
 // GET all workouts
-router.get('/',cache(300), getWorkouts)
+router.get('/', getWorkouts)
 
 // GET a single workout
 router.get('/:id', getWorkout)
